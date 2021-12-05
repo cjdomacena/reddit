@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Route, Routes } from 'react-router';
 import { Navbar } from './components/Navbar'
 import { UserContext } from './context/UserContext'
+import UserPosts from './components/Posts/UserPosts'
 import AddPost from './crud/AddPost';
 import Home from './pages/Home';
 function App()
@@ -20,7 +21,7 @@ function App()
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/addPost" element={<AddPost />} />
-            <Route path="/home" element={<Home/>}/>
+            <Route path="/userPosts" element={<UserPosts />}/>
           </Routes>
         </div>
 

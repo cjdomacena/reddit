@@ -3,15 +3,14 @@ import { Link } from "react-router-dom"
 import { Menu, Transition } from "@headlessui/react"
 import { signOut } from "@firebase/auth"
 import { auth } from "../../firebase"
+import {useContext} from 'react';
+import {UserContext} from './../../context/UserContext'
 import { useNavigate } from "react-router"
 const UserMenu = ({ user }) =>
 {
 	let navigate = useNavigate();
-	const logout = async () =>
-	{
-		console.log("clicked")
-		await signOut().catch((e) => console.log(e)).finally(() => window.location.reload());
-	}
+	const {setIsLoggedIn} = useContext(UserContext);
+	const logout = () => { signOut(auth); setIsLoggedIn(false); navigate("/")};
 	return (
 		<Menu as="div" className="relative">
 			<Menu.Button>
@@ -40,7 +39,7 @@ const UserMenu = ({ user }) =>
 
 						</Menu.Item>
 						<Menu.Item as="li" className="hover:bg-gray-200 p-1 rounded cursor-pointer">
-							<Link to="/allPosts">
+							<Link to="/userPosts">
 								My Posts
 							</Link>
 						</Menu.Item>

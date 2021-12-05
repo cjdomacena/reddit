@@ -34,7 +34,7 @@ const Posts = () =>
 
 	return (
 		<div className="container mx-auto w-full grid grid-cols-1 gap-4">
-			{posts ? newPosts.map((post) => <Card post={post} />) : ""}
+			{posts ? newPosts.map((post) => <Card post={post}/>) : ""}
 		</div>
 	)
 }

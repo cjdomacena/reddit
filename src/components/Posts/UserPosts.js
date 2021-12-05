@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { UserContext } from './../../context/UserContext'
 import Card from './Card';
 
-const Posts = () =>
+const UserPosts = () =>
 {
 	const { user } = useContext(UserContext);
 	const [posts, setPosts] = useState(null);
@@ -34,9 +34,9 @@ const Posts = () =>
 
 	return (
 		<div className="container mx-auto grid grid-cols-5 gap-4">
-			{posts ? newPosts.map((post) => <Card post={post}/>) : ""}
+			{posts ? newPosts.map((post) => <Card post={post} />) : ""}
 		</div>
 	)
 }
 
-export default Posts
+export default UserPosts
