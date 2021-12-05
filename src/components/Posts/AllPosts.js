@@ -1,13 +1,12 @@
-import { getDocs, query, collection, where } from 'firebase/firestore'
-import { useEffect, useState } from 'react'
-import { db, auth } from './../../firebase';
-import { useContext } from 'react'
-import { UserContext } from './../../context/UserContext'
+import { getDocs, query, collection } from 'firebase/firestore'
+import { useEffect, useState, useContext } from 'react'
+import { db } from './../../firebase';
 import Card from './Card';
-
+import { PostsContext } from '../../context/PostsContext';
 const Posts = () =>
 {
-	const [posts, setPosts] = useState(null);
+
+	const {posts, setPosts} = useContext(PostsContext);
 	const newPosts = [];
 	const getPosts = async (q) =>
 	{
@@ -18,13 +17,12 @@ const Posts = () =>
 	}
 	useEffect(() =>
 	{
-
 			const q = query(collection(db, "users"))
 			getPosts(q)
 		
-	}, [posts])
+	}, [])
 
-	if ( posts)
+	if (posts)
 	{
 		posts.forEach((post) =>
 		{

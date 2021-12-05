@@ -43,12 +43,12 @@ const AddPost = () =>
 		<div className="w-96 mx-auto">
 			<div className="grid grid-cols-1 gap-6">
 				<div>
-					<label htmlFor="post-title" className="block text-sm font-medium text-gray-700">Post Title</label>
+					<label htmlFor="post-title" className="block text-sm font-medium text-gray-50">Post Title</label>
 					<input type="text" name="post-title" id="post-title" autocomplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required onChange={(e) => handleInputChange(e, setPostTitle)} value={postTitle} />
 				</div>
 
 				<div>
-					<label htmlFor="about" class="block text-sm font-medium text-gray-700">
+					<label htmlFor="about" class="block text-sm font-medium text-gray-50">
 						About
 					</label>
 					<div className="mt-1">

@@ -1,6 +1,6 @@
 import { getDocs, query, collection, where } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
-import { db, auth } from './../../firebase';
+import { db } from './../../firebase';
 import { useContext } from 'react'
 import { UserContext } from './../../context/UserContext'
 import Card from './Card';

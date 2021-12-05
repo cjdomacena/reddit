@@ -7,8 +7,6 @@ const Home = () => {
 	return (
 		<div className="grid grid-cols-3 gap-4">
 			<AllPosts/>
-			<AllPosts />
-			<AllPosts />
 		</div>
 	)
 }

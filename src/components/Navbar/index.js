@@ -2,8 +2,7 @@ import React, { useRef, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "@heroicons/react/outline";
 import { loginWithGoogle, auth } from "../../firebase";
-import { onAuthStateChanged, signOut } from "@firebase/auth";
-import LoggedIn from "./loggedIn";
+import { onAuthStateChanged } from "@firebase/auth";
 import { UserContext } from "../../context/UserContext";
 import UserMenu from "./UserMenu";
 export const Navbar = () =>
@@ -26,12 +25,18 @@ export const Navbar = () =>
 			setFocused(false);
 		}
 	};
-
 	onAuthStateChanged(auth, (currentUser) =>
 	{
 		setUser(currentUser);
-		if(currentUser) setIsLoggedIn(true);
-		else setIsLoggedIn(false);
+		if(currentUser)
+		{ 
+			setIsLoggedIn(true);	
+			// navigate("/home")
+		}
+		else {
+			setIsLoggedIn(false)
+
+		};
 	})
 
 

@@ -38,8 +38,7 @@ export const loginWithGoogle = () => {
 	signInWithPopup(auth, googleProvider).catch((error) => {
 		console.log(error)
 	}).finally(() => {
-		 let navigate = useNavigate();
-		 navigate("/")
+		 
 	})
 }
 
